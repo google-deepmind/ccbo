@@ -1,25 +1,43 @@
 # ccbo
 
-TODO(b/282019257): Add a description for your new project, explain what is
-being released here, etc... Additional, the following sections are normally
-expected for all releases. Feel free to add additional sections if appropriate
-for your project.
+This project contains the code associated to the following paper:
+
+"Constrained Causal Bayesian Optimization" by Aglietti Virginia, Alan Malek, Ira Ktena, and Silvia Chiappa.
+International Conference on Machine Learning. PMLR, 2023.
 
 ## Installation
+The code requires `python3.10` and `python3.10-dev`.
 
-Write instructions for how the user should install your code. The instructions
-should ideally be valid when copy-pasted. You can combine this with the Usage
-section if there's no separate installation step.
+To install the package and the necessary requirements you can run (run these
+commands from the directory that you wish to clone `ccbo` into):
+
+```shell
+git clone https://github.com/deepmind/ccbo.git
+python3.10 -m venv ccbo_venv
+source ccbo_venv/bin/activate
+python3.10 -m pip install --upgrade pip
+pip install -r ./ccbo/requirements.txt
+```
 
 ## Usage
 
-Write example usage of your code. The instructions should ideally be valid when
-copy-pasted, and will be used by your technical reviewer to verify that your
-package functions correctly.
+The algorithm can be run via the script `run_experiment.py` using the command
+`python -m ccbo.experiments.run_optimization` where a config file can be
+specified using the flag --config. A notebook `run_experiment.ipynb` is
+also provided to allow comparing cCBO and the other methods in the paper.
+
+Experiment configurations are provided in `experiments/`.
 
 ## Citing this work
 
-Add citation details here, usually a pastable BibTeX snippet.
+Please cite the ICML paper referenced above. The BibTex is:
+
+    @inproceedings{aglietti2023constrained
+        title={Constrained Causal Bayesian Optimization},
+        author={Aglietti, Virginia and Malek, Alan and Ktena, Ira and Chiappa, Silvia},
+        booktitle={International Conference on Machine Learning},
+        year={2023},
+    }
 
 ## License and disclaimer
 
